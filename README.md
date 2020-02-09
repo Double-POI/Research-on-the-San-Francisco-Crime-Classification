@@ -24,12 +24,12 @@ new（.py）版本加入了两个dropout层，缓解了过拟合。
 
 新的网络结构图如下：
 
-!(https://github.com/Double-POI/SF-crime-Pytorch/blob/master/new-result-picture/new-result-net.jpg?raw=true)
+![net](https://github.com/Double-POI/SF-crime-Pytorch/blob/master/new-result-picture/new-result-net.jpg?raw=true)
 
 新的网络训练过程如下：
 
-!(https://github.com/Double-POI/SF-crime-Pytorch/blob/master/new-result-picture/new-result-train.jpg?raw=true)
+![train](https://github.com/Double-POI/SF-crime-Pytorch/blob/master/new-result-picture/new-result-train.jpg?raw=true)
 
 新的提交结果如下：
 
-!(https://github.com/Double-POI/SF-crime-Pytorch/blob/master/new-result-picture/new-result.jpg?raw=true)
+![submit](https://github.com/Double-POI/SF-crime-Pytorch/blob/master/new-result-picture/new-result.jpg?raw=true)
