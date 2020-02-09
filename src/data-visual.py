@@ -2,7 +2,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-train_data = pd.read_csv('../train.csv')
+train_data = pd.read_csv('../input/train.csv')
 
 cate_group = train_data.groupby(by='Category').size()
 cat_num = len(cate_group.index)
@@ -117,7 +117,7 @@ plt.ylabel('Y')
 plt.savefig('../output/picture/scatter of crimes by coordinate.png',dpi=400,bbox_inches='tight')
 plt.close('all')
 
-img = plt.imread('../map.png')
+img = plt.imread('../input/map.png')
 dpi=100
 height, width, depth = img.shape
 plt.figure(figsize=(width / dpi, height / dpi))

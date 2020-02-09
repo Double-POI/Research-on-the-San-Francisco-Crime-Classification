@@ -10,10 +10,10 @@ from sklearn.decomposition import PCA
 
 #train_data = pd.read_csv('/kaggle/input/sf-crime/train.csv.zip',
 #                         parse_dates=['Dates'])
-train_data = pd.read_csv('../train.csv', parse_dates=['Dates'])
+train_data = pd.read_csv('../input/train.csv', parse_dates=['Dates'])
 #test_data = pd.read_csv('/kaggle/input/sf-crime/test.csv.zip',
 #                        parse_dates=['Dates'])
-test_data = pd.read_csv('../test.csv', parse_dates=['Dates'])
+test_data = pd.read_csv('../input/test.csv', parse_dates=['Dates'])
 
 all_features = pd.concat((train_data.iloc[:, [0, 3, 4, 6, 7, 8]],
                           test_data.iloc[:, [1, 2, 3, 4, 5, 6]]),
@@ -202,7 +202,7 @@ else:
     ]
     #sampleSubmission = pd.read_csv(
     #    '/kaggle/input/sf-crime/sampleSubmission.csv.zip')
-    sampleSubmission = pd.read_csv('../sampleSubmission.csv')
+    sampleSubmission = pd.read_csv('../input/sampleSubmission.csv')
     Result_pd = pd.DataFrame(testResult,
                              index=sampleSubmission.index,
                              columns=sampleSubmission.columns[1:])
