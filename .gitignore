@@ -1,2 +1,5 @@
 *.csv
 *.npy
+*.7z
+*.docx
+/old
