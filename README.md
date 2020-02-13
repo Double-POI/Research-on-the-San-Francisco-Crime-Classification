@@ -6,11 +6,11 @@ Fight crime with Pytorch!
 
 https://www.kaggle.com/c/sf-crime/data
 
-数据应当存放于/input中
+数据应当存放于/input/sf-crime中
 
 ## 输出的模型
 
-/output/net.pkl，是CUDA的模型，CPU玩家自行转换，另载入模型需要声明类Residual和build-model。
+/working/net.pkl，是CUDA的模型，CPU玩家自行转换，另载入模型需要声明类Residual和build-model。
 
 ## 写于kaggle的Notebook
 
