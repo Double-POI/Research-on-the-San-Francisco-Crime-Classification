@@ -9,6 +9,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
 ```
 
 读取train.csv和test.csv两个表格：
@@ -118,19 +119,20 @@ all_features['block'] = all_features['Address'].apply(
     lambda x: 1 if 'block' in x.lower() else 0)
 ```
 
-按照使用算法的区别，将all_features一分为二：
+按照使用算法的区别，将all_features一分为三：
 
 
 ```python
+PCA_features = all_features[['X', 'Y']].values
 Standard_features = all_features[['DayOfWeek', 'year', 'month', 'day',
-                                  'hour', 'X', 'Y']].values
+                                  'hour']].values
 OneHot_features = pd.concat([
     OneHot_features, all_features[['new_year', 'evening', 'weekend', 'block']]
 ],
                             axis=1).values
 ```
 
-特征缩放是用来统一资料中的自变项或特征范围的方法，我们采用特征缩放中标准化的方法对DayOfWeek、year、month、day、hour、X、Y七列进行处理：
+特征缩放是用来统一资料中的自变项或特征范围的方法，我们采用特征缩放中标准化的方法对DayOfWeek、year、month、day、hour五列进行处理：
 
 
 ```python
@@ -139,12 +141,23 @@ scaler.fit(Standard_features)
 Standard_features = scaler.transform(Standard_features)
 ```
 
-将独热编码的PdDistrict、new_year、evening、weekend、block五部分与标准化的七列进行拼接，重新得到all_features（总计12个特征，21列）：
+主成分分析（Principal Component Analysis，PCA）， 是一种统计方法。通过正交变换将一组可能存在相关性的变量转换为一组线性不相关的变量。
+
+我们既想保留X、Y的特征，又想适当削弱X、Y的权重，于是选择对X、Y两列进行主成分分析：
+
+
+```python
+pca = PCA(n_components=2)
+pca.fit(PCA_features)
+PCA_features = pca.transform(PCA_features)
+```
+
+将独热编码的PdDistrict、new_year、evening、weekend、block五部分与其余部分进行拼接，重新得到all_features（总计12个特征，21列）：
 
 
 ```python
 all_features = np.concatenate(
-    (Standard_features, OneHot_features), axis=1)
+    (PCA_features, Standard_features, OneHot_features), axis=1)
 ```
 
 将all_features一分为二，得到处理好的训练集特征train_features和测试集特征test_features，以及网络输入层节点数num_inputs：
