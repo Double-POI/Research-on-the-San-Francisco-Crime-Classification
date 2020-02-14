@@ -14,17 +14,17 @@ Kaggle是由联合创始人、首席执行官Anthony Goldbloom于2010年在墨�
 
 这回我选择的是一个不太出名的数据集（其实是老师推荐的）——[San Francisco Crime Classification](https://www.kaggle.com/c/sf-crime)
 
-![](./pic/1.png)
+![](./1.png)
 
 按提示下载数据，根据Kaggle官方介绍，这个数据集是由旧金山市中央数据交换所（SF OpenData）提供的，包括来自旧金山所有街区近12年（2003年至2015年）的犯罪报告。
 
 官方给出的训练集（train.csv）样例如下：
 
-![](./pic/2.png)
+![](./2.png)
 
 官方给出的测试集（test.csv）样例如下：
 
-![](./pic/3.png)
+![](./3.png)
 
 另外还有一个sampleSubmission.csv文件，是提交文件的样例，图略
 
@@ -41,15 +41,15 @@ git config --global user.email "xxx@xxx.com"
 #可以用--local给单个项目设定用户名
 ```
 
-然后为你的邮箱地址绑定ssh，不会的地方可以参考[如何在一台电脑上同时使用Gitee（码云）和Github？](https://segmentfault.com/a/1190000020127413)，只用一个网站的话，绑定一个网站就行
+然后为你的邮箱地址绑定ssh，不会的地方可以参考[如何在一台电脑上同时使用Gitee（码云）和Github？](https://segmentfault.com/a/1190000020127413)，我们选择性的绑定一个网站的就行
 
 在gitee（github）上开一个resposity（仓库），并初始化
 
-![](./pic/4.png)
+![](./4.png)
 
 然后记录下ssh的clone地址
 
-![](./pic/5.png)
+![](./5.png)
 
 切换到你想要建立项目目录的上级目录，打开终端
 
@@ -73,12 +73,12 @@ git push #同步到云端，如果报错，加-f参数强制上传，不过慎�
 
 因为我们最后的结果会扔到kernel上跑出来，所以我们项目的结构应该参考一下kernel的结构，kernel的文件结构如下：（暂时不需要知道这个图片是怎么来的，后面会提到）
 
-![](./pic/6.png)
+![](./6.png)
 
 所以，我们应该在我们的项目目录下新建两个目录，/input和/working，另外，我们想要源代码文件和输出文件相隔离，再建一个目录/src，/input下新建sf-crime文件夹，把下载下来的数据（三个.zip，不用解压，pandas可以直接读zip）放里面
 
 目录树如下：（PS：应该还有gitee自带的.git、.gitee、README.md等文件）
 
-![](./pic/7.png)
+![](./7.png)
 
-现在，我们的项目目录成功完成布局，我们将在下一篇进行数据的分析，把csv表格所提供的数据清洗成机器学习所需要的样子
+现在，我们的项目目录成功完成布局，我们将在下一篇进行数据的分析，在下下篇把csv表格所提供的数据清洗成机器学习所需要的样子
