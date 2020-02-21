@@ -10,7 +10,7 @@ https://www.kaggle.com/c/sf-crime/data
 
 ## 输出的模型
 
-/working/net.pkl，是CUDA的模型，CPU玩家自行转换，另载入模型需要声明类Residual和build-model。
+/working/net(v0.5).pkl，是CUDA的模型，CPU玩家自行转换，另载入模型需要声明类Residual和build-model。
 
 ## 写于kaggle的Notebook
 
