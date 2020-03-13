@@ -1,6 +1,6 @@
-# SF-crime-Pytorch
+# Research on the San Francisco Crime Classification
 
-Fight crime with Pytorch!
+旧金山犯罪分类预测模型研究
 
 ## 下载数据
 
@@ -8,17 +8,7 @@ https://www.kaggle.com/c/sf-crime/data
 
 数据应当存放于/input/sf-crime中
 
-## 输出的模型
-
-/working/net(v4).pkl，是PyTorch的CUDA的模型，CPU玩家自行转换，另载入模型需要声明类Residual和build-model。
-
-另外，在 https://www.kaggle.com/doublepoi/a-nn-with-residual-v4 有notebook。
-
-/working/gbm(v1).pkl，是LightGBM的模型，v2由于大小原因，未上传。
-
-另外，在 https://www.kaggle.com/doublepoi/lightgbm-test-4 有v2的notebook。
-
-## 目录
+## 草稿的目录
 
 [一、项目搭建](https://gitee.com/Double-POI/SF-crime-Pytorch/blob/master/%E6%97%A7%E9%87%91%E5%B1%B1%E7%8A%AF%E7%BD%AA%E5%88%86%E7%B1%BB%E9%A2%84%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%A0%94%E7%A9%B6/1%E3%80%81%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/1%E3%80%81%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA.md)
 
@@ -40,7 +30,7 @@ https://www.kaggle.com/c/sf-crime/data
 
 ## 源代码
 
-位于/src目录下。
+位于/论文代码 目录下。
 
 ## 总结
 
